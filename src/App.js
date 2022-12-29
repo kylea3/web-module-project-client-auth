@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Login from './components/Login';
+import FriendsList from './components/FriendsList';
 
 
 function App() {
@@ -10,17 +11,16 @@ function App() {
       <nav> 
         <h2>Friends Database</h2>
         <div className='links'>  
-          <Link className='link' to="/login">Login</Link>
+          <Link className='link' to="/">Login</Link>
           <Link className='link' to="/friendlist">FriendList</Link>
           <Link className='link' to="/addfriend">AddFriend</Link>
-          <Link className='link' to="/login">LogOut</Link>
+          <Link className='link' to="/">LogOut</Link>
         </div>
       </nav>
       <Routes>
-        <Route path="/login">Login</Route>
-        <Route path="/friendlist">FriendList</Route>
-        <Route path="/addfriend">AddFriend</Route>
-        <Route path="/login">LogOut</Route>
+        <Route exact path="/" element={<Login />} />
+        <Route path="/friendlist" element={<FriendsList />} />
+        <Route path="/addfriend" />
       </Routes>
       <Login />
     </div>
