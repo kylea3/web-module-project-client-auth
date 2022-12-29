@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Login from './components/Login';
 import FriendsList from './components/FriendsList';
+import AddFriend from './components/AddFriend';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route path="/friendlist" element={<FriendsList />} />
-        <Route path="/addfriend" />
+        <Route path="/addfriend" element={<AddFriend />} />
       </Routes>
       <Login />
     </div>
